@@ -1,13 +1,23 @@
-<div class="container">
-  <h1>Crear cuenta en Shelly</h1>
-  <form (ngSubmit)="onRegister()">
-    <input type="text" [(ngModel)]="username" name="username" placeholder="Tu nombre de usuario" required>
-    <input type="email" [(ngModel)]="email" name="email" placeholder="ejemplo@correo.com" required>
-    <input type="password" [(ngModel)]="password" name="password" placeholder="Mínimo 8 caracteres" required minlength="8">
-    <input type="text" [(ngModel)]="cedula" name="cedula" placeholder="Cédula (10 dígitos)" required pattern="^[0-9]{10}$">
-    <input type="text" [(ngModel)]="pesera" name="pesera" placeholder="Nombre de la pesera" required>
-    <button type="submit">Registrarse</button>
-  </form>
-  <p *ngIf="errorMessage" class="error">{{ errorMessage }}</p>
-  <p>¿Ya tienes cuenta? <a routerLink="/login">Iniciar sesión</a></p>
+<div class="register-container">
+  <div class="card">
+    <div class="heading">Crear cuenta en Shelly</div>
+
+    <form (ngSubmit)="onRegister()" class="form">
+      <input required class="input" type="text" [(ngModel)]="username" name="username" placeholder="Nombre de usuario">
+      <input required class="input" type="email" [(ngModel)]="email" name="email" placeholder="ejemplo@correo.com">
+      <input required class="input" type="password" [(ngModel)]="password" name="password"
+        placeholder="Contraseña (Mínimo 8 caracteres)" minlength="8">
+      <input required class="input" type="text" [(ngModel)]="cedula" name="cedula" placeholder="Cédula (10 dígitos)"
+        pattern="^[0-9]{10}$">
+      <input required class="input" type="text" [(ngModel)]="pesera" name="pesera" placeholder="Nombre de la pesera">
+
+      <p *ngIf="errorMessage" class="error-message">{{ errorMessage }}</p>
+
+      <button class="register-button" type="submit">Registrarse</button>
+    </form>
+
+    <div class="footer">
+      <p>¿Ya tienes cuenta? <a routerLink="/login" class="login-link">Iniciar sesión</a></p>
+    </div>
+  </div>
 </div>

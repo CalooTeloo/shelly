@@ -1,11 +1,20 @@
 <div class="pesera-list">
   <h2>Mis Peseras</h2>
-  <ul>
-    <li *ngFor="let pesera of peseras">
-      <!-- Enlaza a la vista detallada pasando el id o nombre de la pesera -->
-      <a [routerLink]="['/pesera-detail', pesera.id]">{{ pesera.nombre }}</a>
-    </li>
-  </ul>
-  <!-- Botón para crear nueva pesera -->
-  <button routerLink="/pesera-form">Crear Pesera</button>
+
+  <!-- Contenedor con scroll vertical -->
+  <div class="cards-container">
+    <!-- Cada pesera como card -->
+    <div class="card" *ngFor="let pesera of peseras">
+      <div class="card-details">
+        <p class="text-title">{{ pesera.nombre }}</p>
+        <p class="text-body">Imagen aquí</p>
+      </div>
+      <a class="card-button" [routerLink]="['/pesera-detail', pesera.id]">Ver detalles</a>
+    </div>
+  </div>
+
+  <!-- Botón tradicional para crear -->
+  <button class="create-button" routerLink="/pesera-form">
+    <span>+</span> Crear Nueva Pesera
+  </button>
 </div>
