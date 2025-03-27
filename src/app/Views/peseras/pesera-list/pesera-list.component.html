@@ -1,0 +1,11 @@
+<div class="pesera-list">
+  <h2>Mis Peseras</h2>
+  <ul>
+    <li *ngFor="let pesera of peseras">
+      <!-- Enlaza a la vista detallada pasando el id o nombre de la pesera -->
+      <a [routerLink]="['/pesera-detail', pesera.id]">{{ pesera.nombre }}</a>
+    </li>
+  </ul>
+  <!-- Botón para crear nueva pesera -->
+  <button routerLink="/pesera-form">Crear Pesera</button>
+</div>

@@ -1,0 +1,103 @@
+.pesera-detail {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    background-color: #F4F6F7;
+    min-height: 100vh;
+    text-align: center;
+
+    .pesera-header {
+        margin-bottom: 20px;
+
+        .pesera-title {
+            color: #2C3E50;
+            font-size: 28px;
+            margin-bottom: 10px;
+        }
+
+        .pesera-info {
+            font-size: 16px;
+            color: #2C3E50;
+            margin: 5px 0;
+
+            strong {
+                font-weight: bold;
+            }
+        }
+    }
+
+    .pesera-image {
+        margin: 20px 0;
+
+        img {
+            max-width: 300px;
+            border-radius: 8px;
+            border: 1px solid #BDC3C7;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+    }
+
+    .pesera-tortugas {
+        margin-top: 20px;
+        width: 100%;
+        max-width: 600px;
+
+        .tortugas-title {
+            color: #16A085;
+            font-size: 22px;
+            margin-bottom: 10px;
+        }
+
+        .tortugas-list {
+            list-style: none;
+            padding: 0;
+
+            .tortuga-item {
+                font-size: 16px;
+                color: #2C3E50;
+                margin-bottom: 5px;
+                padding: 10px;
+                background-color: #FFFFFF;
+                border: 1px solid #BDC3C7;
+                border-radius: 8px;
+                box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            }
+        }
+    }
+
+    .pesera-actions {
+        margin-top: 20px;
+
+        .btn {
+            margin: 0 5px;
+            padding: 12px 20px;
+            font-size: 16px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: background-color 0.3s, box-shadow 0.3s;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+
+            &.btn-edit {
+                background-color: #16A085;
+                color: white;
+            }
+
+            &.btn-edit:hover {
+                background-color: #138D75;
+                box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
+            }
+
+            &.btn-delete {
+                background-color: #E74C3C;
+                color: white;
+            }
+
+            &.btn-delete:hover {
+                background-color: #C0392B;
+                box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
+            }
+        }
+    }
+}

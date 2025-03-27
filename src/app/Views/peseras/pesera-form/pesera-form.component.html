@@ -1,0 +1,40 @@
+<div class="pesera-form">
+  <h2>{{ peseraId ? 'Editar Pesera' : 'Crear Pesera' }}</h2>
+  
+  <form (ngSubmit)="onSubmit()">
+    <label>
+      Nombre de la Pesera:
+      <input type="text" [(ngModel)]="nombre" name="nombre" required>
+    </label>
+    <br>
+    <label>
+      Número de Serie:
+      <input type="text" [(ngModel)]="numeroSerie" name="numeroSerie" required>
+    </label>
+    <br>
+    <label>
+      Horario de Alimentación (horas):
+      <input type="number" [(ngModel)]="horarioAlimentacion" name="horarioAlimentacion" required>
+    </label>
+    <br>
+    <label>
+      Foto:
+      <button type="button" (click)="takePicture()">Tomar/Seleccionar Foto</button>
+    </label>
+    <div *ngIf="foto">
+      <img [src]="foto" alt="Foto de la pesera" style="max-width: 200px; margin-top: 10px;">
+    </div>
+    <br>
+    <label>
+      Nombre de Tortuga:
+      <input type="text" [(ngModel)]="nuevaTortuga" name="nuevaTortuga">
+      <button type="button" (click)="addTortuga()">Agregar Tortuga</button>
+    </label>
+    <ul>
+      <li *ngFor="let tortuga of tortugas">{{ tortuga.nombre }}</li>
+    </ul>
+    <br>
+    <div *ngIf="errorMessage" class="error">{{ errorMessage }}</div>
+    <button type="submit">{{ peseraId ? 'Actualizar' : 'Crear' }}</button>
+  </form>
+</div>

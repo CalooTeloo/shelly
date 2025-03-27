@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">Shelly</string>
+    <string name="title_activity_main">Shelly</string>
+    <string name="package_name">com.shelly.app</string>
+    <string name="custom_url_scheme">com.shelly.app</string>
+</resources>

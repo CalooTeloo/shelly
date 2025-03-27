@@ -1,0 +1,25 @@
+<div class="pesera-detail" *ngIf="pesera">
+  <div class="pesera-header">
+    <h2 class="pesera-title">{{ pesera.nombre }}</h2>
+    <p class="pesera-info"><strong>Número de Serie:</strong> {{ pesera.numeroSerie }}</p>
+    <p class="pesera-info"><strong>Horario Alimentación:</strong> Cada {{ pesera.horarioAlimentacion }} horas</p>
+  </div>
+
+  <div class="pesera-image" *ngIf="pesera.foto">
+    <img [src]="pesera.foto" alt="Foto de la pesera" />
+  </div>
+
+  <div class="pesera-tortugas">
+    <h3 class="tortugas-title">Tortugas</h3>
+    <ul class="tortugas-list">
+      <li class="tortuga-item" *ngFor="let tortuga of pesera.tortugas">
+        {{ tortuga.nombre }}
+      </li>
+    </ul>
+  </div>
+
+  <div class="pesera-actions">
+    <button class="btn btn-edit" (click)="onEdit()">Editar</button>
+    <button class="btn btn-delete" (click)="onDelete()">Eliminar</button>
+  </div>
+</div>
